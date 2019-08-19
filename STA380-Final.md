@@ -1,4 +1,4 @@
-STA380 Excercises
+STA380 Exercises
 ================
 Katie Grant, Hannah Li, Trisha Paul, Puja Subramaniam
 
