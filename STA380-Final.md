@@ -618,8 +618,8 @@ Core S\&P 500 ETF (IVV), Invesco QQQ (QQQ), ISHARES TR/0-5 YR HIGH YIELD
 CORP B (SHYG), and iShares iBoxx $ High Yid Corp Bond (HYG). We decided
 to pick these five ETFs based on the total assets each had, and the best
 daily change rate. The value at risk at the 5% level is a loss of
-$4520.20. This means that if there is no trading over the period, there
-is a 5% chance that this portfolio will fall in value by over $4520.
+$4452.19. This means that if there is no trading over the period, there
+is a 5% chance that this portfolio will fall in value by over -$4452.
 This high amount is expected since this is a high growth portfolio;
 since there is more of a return on this portfolio, there is also a
 higher risk.
@@ -632,9 +632,6 @@ set.seed(512)
 mystocks2 = c("SHV", "SHY", "VGSH", "BOND", "VTI", "VXUS")
 myprices = getSymbols(mystocks2, from = "2014-01-14")
 ```
-
-    ## pausing 1 second between requests for more than 5 symbols
-    ## pausing 1 second between requests for more than 5 symbols
 
 ``` r
 for(ticker in mystocks2) {
@@ -737,7 +734,7 @@ Market ETF (VTI), and Vanguard Total International Stock ETF (VXUS). We
 picked government bonds because they are known to be low-risk
 investments since the issuing government backs them. We paired it with
 two large growth ETFs to slightly increase its risk. As a result, the
-value at risk at the 5% level is a loss of -$935.28. This is
+value at risk at the 5% level is a loss of -$933.28. This is
 considerably lower than the previous example because this is a
 conservative, low risk portfolio, so it is understandable that the risk
 of loss would be lower.
@@ -750,13 +747,6 @@ set.seed(512)
 mystocks3 = c("AOR", "FXE", "LQD", "VHT", "USO", "IYW", "DBC", "VFH", "INDA", "VNQ")
 myprices = getSymbols(mystocks3, from = "2014-01-14")
 ```
-
-    ## pausing 1 second between requests for more than 5 symbols
-    ## pausing 1 second between requests for more than 5 symbols
-    ## pausing 1 second between requests for more than 5 symbols
-    ## pausing 1 second between requests for more than 5 symbols
-    ## pausing 1 second between requests for more than 5 symbols
-    ## pausing 1 second between requests for more than 5 symbols
 
 ``` r
 for(ticker in mystocks3) {
@@ -892,8 +882,9 @@ cormat <- round(cor(social), 2)
 ggcorrplot(cormat, hc.order = TRUE)
 ```
 
-![](figure-gfm/unnamed-chunk-24-1.png)<!-- --> Hard to
-read the correlation plot, but we see that there’s definitely some
+![](figure-gfm/unnamed-chunk-24-1.png)<!-- --> 
+
+Hard to read the correlation plot, but we see that there’s definitely some
 correlation present between words
 
 ### PRE-PROCESSING
@@ -940,10 +931,8 @@ loadings = pc$rotation
 ```
 
 Loadings describe the weight given to each raw variable in calculating
-the new PC
-
-Positive values contribute positively to the component. Negative values
-mean negative relationship. Larger numbers mean stronger relationship
+the new PC. Positive values contribute positively to the component, while negative values
+mean negative relationship. Larger numbers mean stronger relationship. 
 
 ``` r
 scores = pc$x
