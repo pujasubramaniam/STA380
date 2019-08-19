@@ -510,7 +510,7 @@ barchart(column3 ~ column1, groups=column2, d, auto.key = list(columns = 2), mai
 ![](figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 In conclusion, Saturday flights incited some interesting findings at ABIA.
-The lowest number of flights and longest lenght flights were on
+The lowest number of flights and longest length flights were on
 Saturdays. It also had the shortest delays for both arrivals and
 departures compared to the rest of the week, which is good to note for
 customers who are looking for the best days to fly. And finally, based
