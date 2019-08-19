@@ -52,7 +52,7 @@ hist(green_buildings$Rent, 25)
 hist(non_green_buildings$Rent, 25)
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-3-2.png)<!-- -->
+![](figure-gfm/unnamed-chunk-3-2.png)<!-- -->
 
 ``` r
 mean(green_buildings$Rent)
@@ -102,7 +102,7 @@ qplot(boot_g$result, geom="histogram")+labs(x = "Rent per square foot", y = 'Fre
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
 confint(boot_g)
@@ -133,7 +133,7 @@ qplot(boot_ng$result, geom="histogram")+labs(x = "Rent per square foot", y = 'Fr
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
+![](figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
 ``` r
 confint(boot_ng)
@@ -176,7 +176,7 @@ ggplot(data = x1) +
    geom_bar(mapping = aes(x=green_rating, y=amen_pct), stat='identity',fill='#0c5712') + labs(x='Green Rating',y='% of Buildings with Amenities',title='Comparison of Amenities in Green and Non-Green Buildings') + theme(plot.title = element_text(hjust = 0.5))
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 *Comparing age of green buildings to non-green
 buildings*
@@ -185,7 +185,7 @@ buildings*
 ggplot(data, aes(age, fill = green_rating)) + geom_density(alpha = 0.2) + scale_fill_manual(values=c("blue", "green"))
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ### Green-rating vs. leasing rate
 
@@ -204,7 +204,7 @@ ggplot(greenleasing_summ, aes(x=green_rating, y=leasing.mean)) +
   geom_bar(stat='identity',fill='#0c5712') + geom_errorbar(aes(ymin=leasing.mean-leasing.sd,ymax=leasing.mean+leasing.sd),size=1.5) + labs(title='Leasing Rate vs. Green Rating',y='Leasing Rate',x='Green Rating') + theme(plot.title = element_text(hjust = 0.5))
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ### Conclusion
 
@@ -283,7 +283,7 @@ scale_x_continuous(breaks = seq(1, 12, by = 1)) + ggtitle('Frequency of Flights 
     labs(y="Number of Flights", x = "Month")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 Next, we zoomed in a little to see which days of the week had the most
 flights, and the counts were pretty consistent Monday through Friday,
@@ -301,7 +301,7 @@ scale_x_continuous(breaks = seq(1, 12, by = 1)) + ggtitle('Frequency of Flights 
     labs(y="Number of Flights", x = "Day of the Week")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> Before
+![](figure-gfm/unnamed-chunk-10-1.png)<!-- --> Before
 zooming into Saturday alone, we wanted to see how delays varied by day.
 Arrival delays were interesting to see. Wednesday and Saturday had the
 shortest arrival delays. Saturday stood out with the lowest arrival
@@ -339,7 +339,7 @@ plot(t, type = "o",col = "red", ylim=c(0,10), xlab = "Day", ylab = "Arrival Dela
   main = "Average Plane Arrival Delay by Day")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> Next, we
+![](figure-gfm/unnamed-chunk-11-1.png)<!-- --> Next, we
 look at the average airtime by day, and notice again that Saturday
 stands out. Flights out of AUS on Saturday have the longest flights, but
 not by much: only an average of 5 minutes more than the other days.
@@ -371,7 +371,7 @@ plot(t, type = "o",col = "red", ylim=c(90,105), xlab = "Day", ylab = "Airtime (i
   main = "Average Airtime by Day")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> Even
+![](figure-gfm/unnamed-chunk-12-1.png)<!-- --> Even
 though Saturday had the longest flights, it still had one of the lowest
 arrival delay with an average of 7.47 minutes. This means that most
 likely, delays that occur on other days aren’t due to issues in the air,
@@ -406,7 +406,7 @@ plot(t, type = "o",col = "red", ylim=c(7,14), xlab = "Day", ylab = "Arrival Dela
   main = "Average Plane Arrival Delay by Day")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> Now that
+![](figure-gfm/unnamed-chunk-13-1.png)<!-- --> Now that
 Saturday has stood out on multiple occassions, it is time to dive deeper
 into Saturday flights. We first looked at the frequency of flights by
 the hour on Saturdays. 7AM and 11AM seem to be the most popular times at
@@ -428,7 +428,7 @@ scale_x_continuous(breaks = seq(1, 24, by = 1)) + ggtitle('Frequency of Saturday
     labs(y="Number of Flights", x = "Hour of the Day")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now we
+![](figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now we
 looked at arrivals by the hour at AUS on Saturdays. Most arrivals occur
 at 11AM, 1PM, and 4PM. There was an interesting pattern of arrivals
 between 11AM to 3PM as can be seen with the spike/dip pattern between
@@ -453,7 +453,7 @@ scale_x_continuous(breaks = seq(1, 24, by = 1)) + ggtitle('Frequency of Saturday
     labs(y="Number of Flights", x = "Hour of the Day")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-15-1.png)<!-- --> Lastly,
+![](figure-gfm/unnamed-chunk-15-1.png)<!-- --> Lastly,
 we looked at departure and arrival delays by the carriers on Saturdays.
 We decided to look at this to see which carriers passengers should avoid
 based on these delays. It is frustrating for passengers to have to wait
@@ -525,7 +525,7 @@ require(lattice)
 barchart(column3 ~ column1, groups=column2, d, auto.key = list(columns = 2), main='Delay Times on Saturdays for Various Carriers', xlab='Carriers',ylab='Delays (in minutes)', ylim = c(0 , 20))
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-16-1.png)<!-- --> In
+![](figure-gfm/unnamed-chunk-16-1.png)<!-- --> In
 conclusion, Saturday flights incited some interesting findings at ABIA.
 The lowest number of flights and longest lenght flights were on
 Saturdays. It also had the shortest delays for both arrivals and
@@ -584,7 +584,7 @@ total_wealth
 plot(wealthtracker, type='l')
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 # creating histogram to get VaR
@@ -614,7 +614,7 @@ mean(sim1[,n_days])
 hist(sim1[,n_days]- initial_wealth, breaks=30, main="Profit/Loss for Portfolio #1" )
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ``` r
 h = (sim1[,n_days] - initial_wealth)
