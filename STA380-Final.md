@@ -1153,8 +1153,6 @@ training data.
 library(randomForest)
 ```
 
-    ## Warning: package 'randomForest' was built under R version 3.6.1
-
 ``` r
 colnames(DTM_asmatrix) = make.names(colnames(DTM_asmatrix))
 df <- data.frame(Author = class_labels, DTM_asmatrix)
