@@ -455,49 +455,9 @@ df3 <-abia[L,]
 summarise_at(group_by(df3,UniqueCarrier),vars(DepDelay),funs(mean(.,na.rm=TRUE)))
 ```
 
-    ## # A tibble: 16 x 2
-    ##    UniqueCarrier DepDelay
-    ##    <chr>            <dbl>
-    ##  1 9E              6.02  
-    ##  2 AA              5.70  
-    ##  3 B6             10.9   
-    ##  4 CO              5.71  
-    ##  5 DL             10.7   
-    ##  6 EV              9.05  
-    ##  7 F9              1.15  
-    ##  8 MQ             -1.23  
-    ##  9 NW             -0.875 
-    ## 10 OH             13.3   
-    ## 11 OO              9.06  
-    ## 12 UA             13.9   
-    ## 13 US             -0.0581
-    ## 14 WN              7.87  
-    ## 15 XE              8.18  
-    ## 16 YV              9.87
-
 ``` r
 summarise_at(group_by(df3,UniqueCarrier),vars(ArrDelay),funs(mean(.,na.rm=TRUE)))
 ```
-
-    ## # A tibble: 16 x 2
-    ##    UniqueCarrier ArrDelay
-    ##    <chr>            <dbl>
-    ##  1 9E               3.37 
-    ##  2 AA               4.93 
-    ##  3 B6               7.68 
-    ##  4 CO               6.81 
-    ##  5 DL              12.0  
-    ##  6 EV               2.01 
-    ##  7 F9              -0.920
-    ##  8 MQ              -3.16 
-    ##  9 NW               3    
-    ## 10 OH              16.6  
-    ## 11 OO               6.40 
-    ## 12 UA              12.8  
-    ## 13 US              -4.53 
-    ## 14 WN               1.92 
-    ## 15 XE               6.60 
-    ## 16 YV               8.55
 
 ``` r
 d <- data.frame(column1=rep(c("9E","AA","B6", "CO","DL","EV","F9","MQ","NW","OH","OO","UA","US","WN","XE","YV"), each=2), 
