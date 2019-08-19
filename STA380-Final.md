@@ -100,6 +100,7 @@ boot_g = do(2500)*{
 qplot(boot_g$result, geom="histogram")+labs(x = "Rent per square foot", y = 'Frequency')+ggtitle("Median Rent for Green Buildings")
 ```
 
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
@@ -130,6 +131,7 @@ boot_ng = do(2500)*{
 qplot(boot_ng$result, geom="histogram")+labs(x = "Rent per square foot", y = 'Frequency')+ggtitle("Median Rent for Non-Green Buildings")
 ```
 
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
@@ -143,14 +145,14 @@ confint(boot_ng)
 We first decided to compare rent rates to see how long it would take to
 recuperate the loss from the 5% premium. The analyst took a single
 median value to determine how long it would take to gain back that loss,
-however this is not the most accurate way to measure rent rates. In
-order to get a more accurate measure of median for rent, we bootstrapped
-the median 2500 times and obtained a confidence interval of what the
-rent price range was for green buildings. We then repeated the same
-process for non-green buildings. In doing this, we noticed that
-non-green building rent is around $24.74-$25.45 with 95% confidence and
-green-building rent is around $26.89-$28.50 with 95% confidence; so
-roughly a $2-$3 upcharge for tenants of green-buildings. This leads us
+however this is not the most accurate way to measure rent. In
+order to get a more accurate measure of the median rent, we bootstrapped
+the median 2500 times and obtained a confidence interval for
+rents for green buildings. We then repeated the same
+process for non-green buildings. In doing this, we noticed that the median
+non-green building rents is around $24.74-$25.45 with 95% confidence and the
+median green-building rent is around $26.89-$28.50 with 95% confidence; so
+there is a $1.44-$3.76 upcharge for tenants of green-buildings. This leads us
 to believe that the owner will be able to regain their loss from the
 premium cost in $5,000,000/$750,000 = 6.6 years at the earliest.
 
@@ -159,10 +161,9 @@ premium cost in $5,000,000/$750,000 = 6.6 years at the earliest.
 There are several variables that may confound the relationship between
 rent and green status. For example, a higher percentage of green
 buildings have amenities than non-green buildings. Additionally,
-green-buildings tend to be newer than non-green buildings and a higher
-percentage have been renovated which may indicate that green buildings
-have higher quality interiors. All of these factors may contribute to
-green buildings having higher rents.
+green-buildings tend to be newer than non-green buildings which may 
+indicate that green buildings have higher quality interiors. All of these 
+factors may contribute to green buildings having higher rents.
 
 *Percent of buildings with amenities*
 
