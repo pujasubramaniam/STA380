@@ -229,10 +229,9 @@ library(ggplot2)
 library(knitr)
 library(chron)
 setwd("/Users/pujas/OneDrive/Documents")
-abia = read.csv("ABIA.csv", header = T, stringsAsFactors = FALSE)
+abia = read.csv("ABIA.csv", 
+er = T, stringsAsFactors = FALSE)
 attach(abia)
-#head(abia)
-#names(abia)
 
 #cleaning data by converting the integers to times.
 DepTime <- substr(as.POSIXct(sprintf("%04.0f", DepTime), format='%H%M'), 12, 16)
@@ -605,22 +604,6 @@ all_returns = cbind(ClCl(SHVa),
                     ClCl(VXUSa))
 head(all_returns)
 ```
-
-    ##                ClCl.SHVa     ClCl.SHYa    ClCl.VGSHa    ClCl.BONDa
-    ## 2014-01-14            NA            NA            NA            NA
-    ## 2014-01-15  0.000000e+00 -0.0003553542 -0.0011501807 -0.0023687701
-    ## 2014-01-16 -9.072109e-05  0.0002370542  0.0006580194  0.0037990407
-    ## 2014-01-17  9.072932e-05  0.0000000000 -0.0001644254  0.0028384520
-    ## 2014-01-21 -9.072109e-05 -0.0001184931  0.0008220816 -0.0009434758
-    ## 2014-01-22  0.000000e+00 -0.0004739455 -0.0003285855 -0.0027387006
-    ##                ClCl.VTIa    ClCl.VXUSa
-    ## 2014-01-14            NA            NA
-    ## 2014-01-15  0.0050172887  0.0021193833
-    ## 2014-01-16 -0.0007280291  0.0001923092
-    ## 2014-01-17 -0.0038509887 -0.0036524029
-    ## 2014-01-21  0.0033434333  0.0036657919
-    ## 2014-01-22  0.0018744143  0.0030757401
-
 ``` r
 all_returns = as.matrix(na.omit(all_returns))
 return.today = resample(all_returns, 1, orig.ids=FALSE)
