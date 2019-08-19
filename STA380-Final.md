@@ -1228,48 +1228,10 @@ groceries = read.transactions('groceries.txt',sep=',',header=FALSE)
 str(groceries)
 ```
 
-    ## Formal class 'transactions' [package "arules"] with 3 slots
-    ##   ..@ data       :Formal class 'ngCMatrix' [package "Matrix"] with 5 slots
-    ##   .. .. ..@ i       : int [1:43367] 29 88 118 132 33 157 167 166 38 91 ...
-    ##   .. .. ..@ p       : int [1:9836] 0 4 7 8 12 16 21 22 27 28 ...
-    ##   .. .. ..@ Dim     : int [1:2] 169 9835
-    ##   .. .. ..@ Dimnames:List of 2
-    ##   .. .. .. ..$ : NULL
-    ##   .. .. .. ..$ : NULL
-    ##   .. .. ..@ factors : list()
-    ##   ..@ itemInfo   :'data.frame':  169 obs. of  1 variable:
-    ##   .. ..$ labels: chr [1:169] "abrasive cleaner" "artif. sweetener" "baby cosmetics" "baby food" ...
-    ##   ..@ itemsetInfo:'data.frame':  0 obs. of  0 variables
-
 ``` r
 summary(groceries)
 ```
 
-    ## transactions as itemMatrix in sparse format with
-    ##  9835 rows (elements/itemsets/transactions) and
-    ##  169 columns (items) and a density of 0.02609146 
-    ## 
-    ## most frequent items:
-    ##       whole milk other vegetables       rolls/buns             soda 
-    ##             2513             1903             1809             1715 
-    ##           yogurt          (Other) 
-    ##             1372            34055 
-    ## 
-    ## element (itemset/transaction) length distribution:
-    ## sizes
-    ##    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15 
-    ## 2159 1643 1299 1005  855  645  545  438  350  246  182  117   78   77   55 
-    ##   16   17   18   19   20   21   22   23   24   26   27   28   29   32 
-    ##   46   29   14   14    9   11    4    6    1    1    1    1    3    1 
-    ## 
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    ##   1.000   2.000   3.000   4.409   6.000  32.000 
-    ## 
-    ## includes extended item information - examples:
-    ##             labels
-    ## 1 abrasive cleaner
-    ## 2 artif. sweetener
-    ## 3   baby cosmetics
 
 *Get association
 rules*
@@ -1344,7 +1306,6 @@ plot(groceryrules)
 plot(groceryrules, measure = c("support", "lift"), shading = "confidence")
 ```
 
-    ## To reduce overplotting, jitter is added! Use jitter = 0 to prevent jitter.
 
 ![](figure-gfm/unnamed-chunk-46-2.png)<!-- -->
 
@@ -1352,8 +1313,6 @@ plot(groceryrules, measure = c("support", "lift"), shading = "confidence")
 # "two key" plot: coloring is by size (order) of item set
 plot(groceryrules, method='two-key plot')
 ```
-
-    ## To reduce overplotting, jitter is added! Use jitter = 0 to prevent jitter.
 
 ![](figure-gfm/unnamed-chunk-46-3.png)<!-- -->
 
