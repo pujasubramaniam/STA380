@@ -85,7 +85,7 @@ median(non_green_buildings$Rent)
 boot_g = do(2500)*{
     median(resample(green_buildings)$Rent)
 }
-head(boot_g)
+
 ```
 
     ##   result
@@ -115,7 +115,7 @@ confint(boot_g)
 boot_ng = do(2500)*{
     median(resample(non_green_buildings)$Rent)
 }
-head(boot_ng)
+
 ```
 
     ##   result
@@ -241,28 +241,6 @@ CRSDepTime <- substr(as.POSIXct(sprintf("%04.0f", CRSDepTime), format='%H%M'), 1
 ArrTime <- substr(as.POSIXct(sprintf("%04.0f", ArrTime), format='%H%M'), 12, 16)
 CRSArrTime <- substr(as.POSIXct(sprintf("%04.0f", CRSArrTime), format='%H%M'), 12, 16)
 
-# cleaning data by converting integers to actual days
-DayOfWeek[DayOfWeek == 1] <- 'Monday'
-DayOfWeek[DayOfWeek == 2] <- 'Tuesday'
-DayOfWeek[DayOfWeek == 3] <- 'Wednesday'
-DayOfWeek[DayOfWeek == 4] <- 'Thursday'
-DayOfWeek[DayOfWeek == 5] <- 'Friday'
-DayOfWeek[DayOfWeek == 6] <- 'Saturday'
-DayOfWeek[DayOfWeek == 7] <- 'Sunday'
-
-# cleaning data by converting integers to actual months.
-Month[Month == 1] <- 'January'
-Month[Month == 2] <- 'February'
-Month[Month == 3] <- 'March'
-Month[Month == 4] <- 'April'
-Month[Month == 5] <- 'May'
-Month[Month == 6] <- 'June'
-Month[Month == 7] <- 'July'
-Month[Month == 8] <- 'August'
-Month[Month == 9] <- 'September'
-Month[Month == 10] <- 'October'
-Month[Month == 11] <- 'November'
-Month[Month == 12] <- 'December'
 ```
 
 Our goal was to see if we could ultimately recommend the best day and
@@ -299,8 +277,9 @@ scale_x_continuous(breaks = seq(1, 12, by = 1)) + ggtitle('Frequency of Flights 
     labs(y="Number of Flights", x = "Day of the Week")
 ```
 
-![](figure-gfm/unnamed-chunk-10-1.png)<!-- --> Before
-zooming into Saturday alone, we wanted to see how delays varied by day.
+![](figure-gfm/unnamed-chunk-10-1.png)<!-- --> 
+
+Before zooming into Saturday alone, we wanted to see how delays varied by day.
 Arrival delays were interesting to see. Wednesday and Saturday had the
 shortest arrival delays. Saturday stood out with the lowest arrival
 delay of an average of 4 minutes. In general these averages are low
@@ -337,8 +316,9 @@ plot(t, type = "o",col = "red", ylim=c(0,10), xlab = "Day", ylab = "Arrival Dela
   main = "Average Plane Arrival Delay by Day")
 ```
 
-![](figure-gfm/unnamed-chunk-11-1.png)<!-- --> Next, we
-look at the average airtime by day, and notice again that Saturday
+![](figure-gfm/unnamed-chunk-11-1.png)<!-- --> 
+
+Next, we look at the average airtime by day, and notice again that Saturday
 stands out. Flights out of AUS on Saturday have the longest flights, but
 not by much: only an average of 5 minutes more than the other days.
 However, even those few extra minutes could have significant costs
@@ -369,8 +349,9 @@ plot(t, type = "o",col = "red", ylim=c(90,105), xlab = "Day", ylab = "Airtime (i
   main = "Average Airtime by Day")
 ```
 
-![](figure-gfm/unnamed-chunk-12-1.png)<!-- --> Even
-though Saturday had the longest flights, it still had one of the lowest
+![](figure-gfm/unnamed-chunk-12-1.png)<!-- --> 
+
+Even though Saturday had the longest flights, it still had one of the lowest
 arrival delay with an average of 7.47 minutes. This means that most
 likely, delays that occur on other days aren’t due to issues in the air,
 but moreso on the ground when departing/landing. Saturday appears to
@@ -404,8 +385,9 @@ plot(t, type = "o",col = "red", ylim=c(7,14), xlab = "Day", ylab = "Arrival Dela
   main = "Average Plane Arrival Delay by Day")
 ```
 
-![](figure-gfm/unnamed-chunk-13-1.png)<!-- --> Now that
-Saturday has stood out on multiple occassions, it is time to dive deeper
+![](figure-gfm/unnamed-chunk-13-1.png)<!-- --> 
+
+Now that Saturday has stood out on multiple occassions, it is time to dive deeper
 into Saturday flights. We first looked at the frequency of flights by
 the hour on Saturdays. 7AM and 11AM seem to be the most popular times at
 the airport for departures. Knowing when the influx of people are during
@@ -426,8 +408,9 @@ scale_x_continuous(breaks = seq(1, 24, by = 1)) + ggtitle('Frequency of Saturday
     labs(y="Number of Flights", x = "Hour of the Day")
 ```
 
-![](figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now we
-looked at arrivals by the hour at AUS on Saturdays. Most arrivals occur
+![](figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+Now we looked at arrivals by the hour at AUS on Saturdays. Most arrivals occur
 at 11AM, 1PM, and 4PM. There was an interesting pattern of arrivals
 between 11AM to 3PM as can be seen with the spike/dip pattern between
 those hours. This makes sense since 11AM, 1PM, and 4PM are on average
@@ -451,8 +434,9 @@ scale_x_continuous(breaks = seq(1, 24, by = 1)) + ggtitle('Frequency of Saturday
     labs(y="Number of Flights", x = "Hour of the Day")
 ```
 
-![](figure-gfm/unnamed-chunk-15-1.png)<!-- --> Lastly,
-we looked at departure and arrival delays by the carriers on Saturdays.
+![](figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+Lastly, we looked at departure and arrival delays by the carriers on Saturdays.
 We decided to look at this to see which carriers passengers should avoid
 based on these delays. It is frustrating for passengers to have to wait
 and be late to their destination. Also these delays can impact the
@@ -523,8 +507,9 @@ require(lattice)
 barchart(column3 ~ column1, groups=column2, d, auto.key = list(columns = 2), main='Delay Times on Saturdays for Various Carriers', xlab='Carriers',ylab='Delays (in minutes)', ylim = c(0 , 20))
 ```
 
-![](figure-gfm/unnamed-chunk-16-1.png)<!-- --> In
-conclusion, Saturday flights incited some interesting findings at ABIA.
+![](figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+
+In conclusion, Saturday flights incited some interesting findings at ABIA.
 The lowest number of flights and longest lenght flights were on
 Saturdays. It also had the shortest delays for both arrivals and
 departures compared to the rest of the week, which is good to note for
