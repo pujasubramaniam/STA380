@@ -1034,7 +1034,7 @@ on various online platforms, including tech, sports, and dating blogs.
 Based on the results of our Principal Component Analysis, there are a
 variety of ways that NutrientH20 can better reach their target market.
 We could see early on that there were correlations between what their
-social media followers were talking about - people after all, have
+social media followers were talking about - people, after all, have
 similar interests\! We were able to create 7 different groups based on
 Tweet topics that we want NutrientH20 to target to best reach their
 customers.
