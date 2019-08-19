@@ -124,29 +124,6 @@ CRSDepTime <- substr(as.POSIXct(sprintf("%04.0f", CRSDepTime), format='%H%M'), 1
 ArrTime <- substr(as.POSIXct(sprintf("%04.0f", ArrTime), format='%H%M'), 12, 16)
 CRSArrTime <- substr(as.POSIXct(sprintf("%04.0f", CRSArrTime), format='%H%M'), 12, 16)
 
-# cleaning data by converting integers to actual days
-DayOfWeek[DayOfWeek == 1] <- 'Monday'
-DayOfWeek[DayOfWeek == 2] <- 'Tuesday'
-DayOfWeek[DayOfWeek == 3] <- 'Wednesday'
-DayOfWeek[DayOfWeek == 4] <- 'Thursday'
-DayOfWeek[DayOfWeek == 5] <- 'Friday'
-DayOfWeek[DayOfWeek == 6] <- 'Saturday'
-DayOfWeek[DayOfWeek == 7] <- 'Sunday'
-
-# cleaning data by converting integers to actual months.
-Month[Month == 1] <- 'January'
-Month[Month == 2] <- 'February'
-Month[Month == 3] <- 'March'
-Month[Month == 4] <- 'April'
-Month[Month == 5] <- 'May'
-Month[Month == 6] <- 'June'
-Month[Month == 7] <- 'July'
-Month[Month == 8] <- 'August'
-Month[Month == 9] <- 'September'
-Month[Month == 10] <- 'October'
-Month[Month == 11] <- 'November'
-Month[Month == 12] <- 'December'
-
 ```
 
 Our goal was to see if we could ultimately recommend the best day and carrier for individuals. First, we looked big picture to understand the frequency of the flights coming in and out of Austin by month. It turns out that there are more flights to/from Austin from May through July, as many people go on vacation during summer months. March had a lot as well, probably due to Spring Break and SXSW.
