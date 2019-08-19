@@ -100,7 +100,6 @@ head(boot_g)
 qplot(boot_g$result, geom="histogram")+labs(x = "Rent per square foot", y = 'Frequency')+ggtitle("Median Rent for Green Buildings")
 ```
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
@@ -131,7 +130,6 @@ head(boot_ng)
 qplot(boot_ng$result, geom="histogram")+labs(x = "Rent per square foot", y = 'Frequency')+ggtitle("Median Rent for Non-Green Buildings")
 ```
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
