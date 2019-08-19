@@ -705,7 +705,7 @@ total_wealth
 plot(wealthtracker, type='l')
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ``` r
 # Now simulate many different possible scenarios  
@@ -735,7 +735,7 @@ mean(sim1[,n_days])
 hist(sim1[,n_days]- initial_wealth, breaks=30, main="Profit/Loss for Portfolio #2")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ``` r
 h = (sim1[,n_days] - initial_wealth)
@@ -844,7 +844,7 @@ total_wealth
 plot(wealthtracker, type='l')
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ``` r
 # Now simulate many different possible scenarios  
@@ -874,7 +874,7 @@ mean(sim1[,n_days])
 hist(sim1[,n_days]- initial_wealth, breaks=30, main="Profit/Loss for Portfolio #3")
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ``` r
 h = (sim1[,n_days] - initial_wealth)
@@ -909,7 +909,7 @@ cormat <- round(cor(social), 2)
 ggcorrplot(cormat, hc.order = TRUE)
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-24-1.png)<!-- --> Hard to
+![](figure-gfm/unnamed-chunk-24-1.png)<!-- --> Hard to
 read the correlation plot, but we see that there’s definitely some
 correlation present between words
 
@@ -935,7 +935,7 @@ Z_std = scale(Z, center=TRUE, scale=FALSE)
 plot(Z_std)
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ### ANALYSIS
 
@@ -949,7 +949,7 @@ pve <- pr_var / sum(pr_var)
 plot(pve, xlab = "Principal Component", ylab = "Proportion of Variance Explained", ylim = c(0,1), type = 'b')
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 ``` r
 #x axis shows # of principal components, y axis shows proportion of variance 
@@ -967,7 +967,7 @@ scores = pc$x
 plot(pc, main='Variance by PC')
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
 Looking at the plot, we see that the ‘knee’ of the graph happens at
 around 7, so we will look at 7 PC components
@@ -982,7 +982,7 @@ scores = pc7$x
 barplot(pc7$rotation[,1], las=3)
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
 Next , we want to see how the individual PCs are loaded on the original
 variables
@@ -3935,7 +3935,7 @@ plot(groceryrules)
 
     ## To reduce overplotting, jitter is added! Use jitter = 0 to prevent jitter.
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-46-1.png)<!-- -->
 
 ``` r
 # swap the axes and color scales
@@ -3944,7 +3944,7 @@ plot(groceryrules, measure = c("support", "lift"), shading = "confidence")
 
     ## To reduce overplotting, jitter is added! Use jitter = 0 to prevent jitter.
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-46-2.png)<!-- -->
+![](figure-gfm/unnamed-chunk-46-2.png)<!-- -->
 
 ``` r
 # "two key" plot: coloring is by size (order) of item set
@@ -3953,7 +3953,7 @@ plot(groceryrules, method='two-key plot')
 
     ## To reduce overplotting, jitter is added! Use jitter = 0 to prevent jitter.
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-46-3.png)<!-- -->
+![](figure-gfm/unnamed-chunk-46-3.png)<!-- -->
 
 ``` r
 # graph-based visualization
@@ -3961,7 +3961,7 @@ sub1 = subset(groceryrules, subset=confidence > 0.5 & lift > 2.5)
 plot(sub1, method='graph')
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-46-4.png)<!-- -->
+![](figure-gfm/unnamed-chunk-46-4.png)<!-- -->
 
 ``` r
 # export
@@ -3977,7 +3977,7 @@ plot.new()
 rasterImage(pp,0,0,1,1)
 ```
 
-![](STA380-Fin_files/figure-gfm/unnamed-chunk-47-1.png)<!-- --> The
+![](figure-gfm/unnamed-chunk-47-1.png)<!-- --> The
 network shown sizes nodes based on their betweenness centrality. The
 colors show the modularity classes. This network tells us that
 vegetables and whole milk are highly influential across the whole
