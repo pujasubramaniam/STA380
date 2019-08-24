@@ -1,5 +1,5 @@
 # STA380
-Predictive Modeling Part 2 Exercises
+Predictive Modeling Exercises
 
 
 A 2 week course focused on unsupervised learning, including: 
